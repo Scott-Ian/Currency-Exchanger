@@ -22,8 +22,12 @@ describe ('Currency Exchange', () => {
   });
 
   test('should successfully make an API call to the currency exchange API, and return the currency exchange rate between baseCurrency and newCurrency', async () => {
+    console.log(`Pre API Call: ${currencyExchanger.exchangeRate}`)
+    console.log(`Base Currency: ${currencyExchanger.baseCurrency}`);
     await currencyExchanger.getExchangeRate();
-    expect(currencyExchanger.exchangeRate).not.toBe(null);
+    console.log(`Post API Call: ${currencyExchanger.exchangeRate}`);
+    expect(currencyExchanger.exchangeRate).not.toBe(undefined);
+    console.log(currencyExchanger.apiResponse);
   });
 
 });
