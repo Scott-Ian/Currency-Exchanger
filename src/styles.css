@@ -1,3 +1,27 @@
-/* #results, #error {
+#results, #error {
   display: none;
-} */
+}
+
+select {
+  width: 2em;
+}
+
+body {
+  background-color: rgb(65, 153, 65);
+  color: purple;
+}
+
+.jumbotron{
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+
+form {
+  justify-content: center;
+}
+
+.submit-button {
+  color: purple;
+  background-color: rgb(65, 153, 65);
+}

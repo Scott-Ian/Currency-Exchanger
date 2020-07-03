@@ -12,19 +12,19 @@ function displayCurrencyConversion(currencyExchanger, convertedValue) {
   $('#converted-currency').text(convertedValue.toString());
 
   $('#error').hide();
-  $('#result').show();
+  $('#results').show();
 }
 
 function displayError(currencyExchanger) {
   $('#error').html(`<h4>Oops Something Went Wrong! Error-type: ${currencyExchanger.error}`);
+  $('#results').hide();
   $('#error').show();
-  $('#result').hide();
 }
 
 function displayInvalidSelection(currencyExchanger) {
   $('#error').html(`<h4>Oops ${currencyExchanger.newCurrency} is not a valid selection. Please use ISO 4217 Codes Only`);
+  $('#results').hide();
   $('#error').show();
-  $('#result').hide();
 }
 
 $(document).ready(function () {
@@ -36,7 +36,7 @@ $(document).ready(function () {
     // Stores User Input for currencyExchanger Object Creation
     const baseCurrency = $('#base-currency').val();
     const baseValue = parseInt($('#base-value').val());
-    const newCurrency = $('#new-currency').val().toUpperCase();
+    const newCurrency = $('#new-currency').val();
 
     currencyExchanger = new CurrencyExchanger(baseCurrency, baseValue, newCurrency);
 

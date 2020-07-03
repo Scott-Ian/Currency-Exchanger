@@ -3,26 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/jquery-3.5.1.js"></script>
-  <script src="js/scripts.js"></script>
   <title>Document</title>
 </head>
 <body>
   <div class="container">
+    <div class="jumbotron">
+      <h2>Currency Exchanger</h2>
+      <h5>All currencies are in ISO 4217 codes</h5>
+    </div>
+
+    <br>
+    <br>
     
     <form id="currency-exchange">
-      <select class="form-control" id="base-currency">
-        <option>USD</option>
-        <option>EUR</option>
-      </select>
+      <div class="form-group">
+        <label for="base-currency"><h5>Base Currency:</h5></label>
+        <select class="form-control" id="base-currency">
+          <option>USD</option>
+          <option>EUR</option>
+        </select>
+      </div>
 
-      <label for="base-value">Base Currency value:</label>
-      <input id="base-value" type="number">
+      <br>
 
-      <label for="new-currency">New Currency Code:</label>
-      <input id="new-currency" type="text">
+      <div class="form-group">
+        <label for="base-value"><h5>Base Currency value:</h5></label>
+        <input id="base-value" type="number" required>
+      </div>
+      
+      <br>
+
+      <div class="form-group">
+
+        <label for="new-currency">Base Currency:</label>
+        <select class="form-control" id="new-currency">
+          <option>AED</option>
+          <option>ARS</option>
+          <option>AUD</option>
+          <option>BGN</option>
+          <option>BRL</option>
+          <option>BSD</option>
+          <option>CAD</option>
+          <option>CHF</option>
+          <option>CLP</option>
+          <option>CNY</option>
+          <option>COP</option>
+          <option>CZK</option>
+          <option>DKK</option>
+          <option>DOP</option>
+          <option>EGP</option>
+          <option>EUR</option>
+          <option>FJD</option>
+          <option>GBP</option>
+          <option>GTQ</option>
+          <option>HKD</option>
+          <option>HRK</option>
+          <option>HUF</option>
+          <option>IDR</option>
+          <option>ILS</option>
+          <option>INR</option>
+          <option>ISK</option>
+          <option>JPY</option>
+          <option>KRW</option>
+          <option>KZT</option>
+          <option>MXN</option>
+          <option>MYR</option>
+          <option>NOK</option>
+          <option>NZD</option>
+          <option>PAB</option>
+          <option>PEN</option>
+          <option>PHP</option>
+          <option>PKR</option>
+          <option>PLN</option>
+          <option>PYG</option>
+          <option>RON</option>
+          <option>RUB</option>
+          <option>SAR</option>
+          <option>SEK</option>
+          <option>SGD</option>
+          <option>THB</option>
+          <option>TRY</option>
+          <option>TWD</option>
+          <option>UAH</option>
+          <option>USD</option>
+          <option>UYU</option>
+          <option>ZAR</option>
+        </select>
+    </div>
 
       <button class="submit btn">Exchange!</button>
     </form>
@@ -34,8 +101,6 @@
     </div>
 
     <div id="error"></div>
-    
-    
   </div>
 </body>
 </html>

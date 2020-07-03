@@ -28,11 +28,8 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 |4.| The program will be able to make an API call to the exchange rate API and utilize the user input American Dollars and foreign currency to return a converted currency value | $10 | 746.44 Indian Rupee | _True_ |
 |5.| If the API call results in an error, the application will return a notification that states what the error is| $10 to Baskar Steele | Error 204: No Content | _True_ |
 |6.| If the user attempts to convert a currency that the exchange API response doesn't include, the program will respond with an error saying that currency doesn't exist| $10 to Baskar Steele | Error: That currency doesn't exist | _True_ |
-
-|7.| The user can only submit USD or EUR as a base currency, and others will not be permitted|  | Sample Output | _False_ |
-
-|6.| Sample Behavior| Sample Input | Sample Output | _False_ |
-|7.| Sample Behavior| Sample Input | Sample Output | _False_ |
+|7.| The user can only submit USD or EUR as a base currency, and others will not be permitted|  | Sample Output | _True_ |
+|8.| User can only submit a new currency code from those available from the API| USD, 15, MXN | 335 MXN | _True_ |
 
 ## Known Bugs
 
