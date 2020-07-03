@@ -4,15 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import {CurrencyExchanger} from './currency-exchanger';
 
-
-
-
-function displayCurrencyConversion(currencyExchanger) {
+function displayCurrencyConversion(currencyExchanger, convertedValue) {
   $('.base-currency-display').text(currencyExchanger.baseCurrency);
   $('.base-value-display').text(currencyExchanger.baseValue);
   $('.new-currency-display').text(currencyExchanger.newCurrency);
   $('#exchange-rate').text(currencyExchanger.exchangeRate);
-  $('#converted-currency').text(currencyExchanger.exchangeRate * currencyExchanger.baseValue);
+  $('#converted-currency').text(convertedValue);
 
   //$('#error').hide();
   //$('#result').show();
@@ -24,8 +21,13 @@ function displayError(currencyExchanger) {
   //$('#result').hide();
 }
 
+function displayInvalidSelection(currencyExchanger) {
+  $('#error').html(`<h4>Oops ${currencyExchanger.newCurrency} is not a valid selection. Please use ISO 4217 Codes Only`);
+}
+
 $(document).ready(function () {
   let currencyExchanger;
+
   $('#currency-exchange').submit(async function (event) {
     event.preventDefault();
 
@@ -35,16 +37,17 @@ $(document).ready(function () {
 
     currencyExchanger = new CurrencyExchanger(baseCurrency, baseValue, newCurrency);
 
-    console.log(currencyExchanger);
 
-    //(async () => {
       await currencyExchanger.getExchangeRate();
-      if (!currencyExchanger.error) {
-        displayCurrencyConversion(currencyExchanger);
+      const convertedValue = currencyExchanger.exchangeRate * currencyExchanger.baseValue;
+      console.log(currencyExchanger.exchangeRate);
+
+      if (!currencyExchanger.error && convertedValue) {
+        displayCurrencyConversion(currencyExchanger, convertedValue);
+      } else if (!convertedValue && !currencyExchanger.error) { 
+        displayInvalidSelection(currencyExchanger);
       } else {
         displayError(currencyExchanger);
       }
-      console.log(currencyExchanger);
-    //});
   });
 });

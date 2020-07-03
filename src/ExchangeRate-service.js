@@ -1,5 +1,3 @@
-//const fetch = require("node-fetch");
-
 export class ExchangeRateService {
   async getAllExchangeRates(baseCurrency) {
     try {
@@ -7,8 +5,7 @@ export class ExchangeRateService {
       let jsonResponse;
       if (response.ok && response.status == 200) {
         jsonResponse = await response.json();
-        console.log(`Response status: ${response.status}`);
-        console.log(`Response: ${jsonResponse}`);
+        return jsonResponse;
       }
       return jsonResponse;
     } catch (error) {

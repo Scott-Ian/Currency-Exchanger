@@ -22,12 +22,9 @@ describe ('Currency Exchange', () => {
   });
 
   test('should successfully make an API call to the currency exchange API, and return the currency exchange rate between baseCurrency and newCurrency', async () => {
-    console.log(`Pre API Call: ${currencyExchanger.exchangeRate}`)
-    console.log(`Base Currency: ${currencyExchanger.baseCurrency}`);
+    //This test fails, but the tested code is functioning. Suspect issue is with the test not fully waiting for API call to finish;
     await currencyExchanger.getExchangeRate();
-    console.log(`Post API Call: ${currencyExchanger.exchangeRate}`);
-    expect(currencyExchanger.exchangeRate).not.toBe(undefined);
-    console.log(currencyExchanger.apiResponse);
+    expect(currencyExchanger.exchangeRate).toBeGreaterThan(20);
   });
 
 });

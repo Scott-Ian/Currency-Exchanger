@@ -25,12 +25,12 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 |1.| The program should take in a base currency value and store it within a currency exchange object| $42 | $42 | _True_ |
 |2.| The currency exchange object will accept a base value currency and store it within the currency exchange object| JPY | JPY | _True_ |
 |3.| The currency exchange object will accept a second currency  to be converted to and store it within the currency exchange object| ISK | ISK | _True_ |
+|4.| The program will be able to make an API call to the exchange rate API and utilize the user input American Dollars and foreign currency to return a converted currency value | $10 | 746.44 Indian Rupee | _True_ |
+|5.| If the API call results in an error, the application will return a notification that states what the error is| $10 to Baskar Steele | Error 204: No Content | _True_ |
 
-|4.| The program will be able to make an API call to the exchange rate API and utilize the user input American Dollars and foreign currency to return a converted currency value | $10 | 746.44 Indian Rupee | _False_ |
-|5.| If the API call results in an error, the application will return a notification that states what the error is| $10 to Baskar Steele | Error 204: No Content | _False_ |
 |6.| If the user attempts to convert a currency that the exchange API response doesn't include, the program will respond with an error saying that currency doesn't exist| $10 to Baskar Steele | Error: That currency doesn't exist | _False_ |
 
-|5.| Sample Behavior| Sample Input | Sample Output | _False_ |
+|7.| The user can only submit USD or EUR as a base currency, and others will not be permitted|  | Sample Output | _False_ |
 
 |6.| Sample Behavior| Sample Input | Sample Output | _False_ |
 |7.| Sample Behavior| Sample Input | Sample Output | _False_ |
