@@ -21,4 +21,9 @@ describe ('Currency Exchange', () => {
     expect(currencyExchanger.newCurrency).toEqual("JPY")
   });
 
+  test('should successfully make an API call to the currency exchange API, and return the currency exchange rate between baseCurrency and newCurrency', async () => {
+    await currencyExchanger.getExchangeRate();
+    expect(currencyExchanger.exchangeRate).not.toBe(null);
+  });
+
 });
