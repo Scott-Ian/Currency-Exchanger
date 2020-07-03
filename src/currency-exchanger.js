@@ -1,5 +1,6 @@
 export class CurrencyExchanger {
-  constructor(baseValue, newCurrency) {
+  constructor(baseCurrency, baseValue, newCurrency) {
+    this.baseCurrency = baseCurrency;
     this.baseValue = baseValue;
     this.newCurrency = newCurrency;
   }
