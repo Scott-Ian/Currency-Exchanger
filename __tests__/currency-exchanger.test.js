@@ -1,4 +1,4 @@
-import {CurrencyExchanger} from './../src/currencyExchanger.js';
+import {CurrencyExchanger} from './../src/currency-exchanger.js';
 
 describe ('Currency Exchange', () => {
   let currencyExchanger = new CurrencyExchanger();
