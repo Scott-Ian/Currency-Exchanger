@@ -10,6 +10,28 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <div class="container">
+    
+    <form id="currency-exchange">
+      <label for="base-currency">Base Currency Code:</label>
+      <input id="base-currency" type="text">
+
+      <label for="base-value">Base Currency value:</label>
+      <input id="base-value" type="number">
+
+      <label for="new-currency">New Currency Code:</label>
+      <input id="new-currency" type="text">
+
+      <button class="submit submit-button btn">Exchange!</button>
+    </form>
+
+    <div id="results">
+      <h3>The exchange rate from <span class ="base-currency-display"></span> to <span class="new-currency-display"></span> is: <span id ="exchange-rate-display"></span>.</h3>
+
+      <h4><span class="base-value-display"></span> <span class="base-currency-display"></span> is <span id="converted-currency"></span> <span class="new-currency-display"></span></h4>
+    </div>
+    
+    
+  </div>
 </body>
 </html>
