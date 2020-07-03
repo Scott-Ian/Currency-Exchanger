@@ -42,7 +42,6 @@ $(document).ready(function () {
 
     await currencyExchanger.getExchangeRate();
     const convertedValue = currencyExchanger.exchangeRate * currencyExchanger.baseValue;
-    console.log(currencyExchanger.exchangeRate);
 
     // Logic to display results to the user, or an error/warning message depending
     if (!currencyExchanger.error && convertedValue) {

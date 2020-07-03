@@ -1,4 +1,4 @@
-# _{Application Name}_
+# _Currency Exchanger_
 
 #### _{Brief description of application}, {Date of current version}_
 
@@ -6,17 +6,21 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This application will convert USD or EUR into one of several dozen international currencies utilizing the ExchangeRate-API (exchangerate-api.com). The program will dynamically display an error should an API call go awry, or it will display a unique error message should the user somehow manage to enter in an unsupported currency code._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_Open via Bash/GitBash_
+  1. Clone this repository onto your computer: https://github.com/Scott-Ian/Currency-Exchanger.git
+  2. Navigate into the "Currency-Exchanger" directory in Visual Studio Code, or your preferred text editor
+  3. In the top level of the program directory create the following file: ".env"
+  4. Paste your own API key into the .env file using the following format: API_KEY = [API KEY GOES HERE!]
+    * To acquire your own unique API key please go to exchangerate-api.com and sign up for a free account using an email address
+    * After account creation, sign in and retrieve your unique API key from the Dashboard
+    * **This program WILL NOT FUNCTION without this unique API key**
+  5. Install all necessary packages with the following terminal command: $ npm install
+  6. Build the project with: $ npm run build
+  7. Open a live development server in your browser with: $ npm run start
 
 ## Specifications
 
@@ -28,27 +32,21 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 |4.| The program will be able to make an API call to the exchange rate API and utilize the user input American Dollars and foreign currency to return a converted currency value | $10 | 746.44 Indian Rupee | _True_ |
 |5.| If the API call results in an error, the application will return a notification that states what the error is| $10 to Baskar Steele | Error 204: No Content | _True_ |
 |6.| If the user attempts to convert a currency that the exchange API response doesn't include, the program will respond with an error saying that currency doesn't exist| $10 to Baskar Steele | Error: That currency doesn't exist | _True_ |
-|7.| The user can only submit USD or EUR as a base currency, and others will not be permitted|  | Sample Output | _True_ |
+|7.| The user can only submit USD or EUR as a base currency, and others will not be permitted| N/A | N/A  | _True_ |
 |8.| User can only submit a new currency code from those available from the API| USD, 15, MXN | 335 MXN | _True_ |
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_There is a visual error with the submission button for the currency exchange form. I am unsure if this is localized to my development environment, or if the error is due to another issue. I've never had the Bootstrap button class not affect a visual change before. Additionally, my final test to ensure the API is working within currency-exchanger.test.js is does not complete successfully, even though the code is functioning. I belive that the issue is due to the test not fully waiting until the API is called before running. However, I did ensure to make the test an asynchronous function, and included the await keyword for the api call method within the test. _
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you have any questions, run into any issues or bugs, or if you would like to contribute to this project, please contact the author via e-mail at: chesnekov@gmail.com_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_This program utilizes HTML, CSS, Bootstrap, JQuery, Node Packet Manager, Jest for some test-driven development, as well as promises, synchronous and asynchronous functions, and the fetch method of querying an API, with a dynamically changing API request URL._
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-
-https://choosealicense.com/
-https://en.wikipedia.org/wiki/MIT_License
-https://en.wikipedia.org/wiki/GNU_General_Public_License
-
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2020 **_Ian Scott._** This web project is licensed under the MIT license. 
