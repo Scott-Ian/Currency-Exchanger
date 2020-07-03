@@ -10,15 +10,15 @@ export class CurrencyExchanger {
     this.apiResponse;
   }
 
-  // Function pings API for all exchange rates available 
+  // Function pings API for all exchange rates available and sets this.exchangeRate to the currency described in this.newCurrency
   async getExchangeRate() {
     let exchangeRateService = new ExchangeRateService();
-    this.apiResponse = await exchangeRateService.getAllExchangeRates(this.baseCurrency);
+    let response = await exchangeRateService.getAllExchangeRates(this.baseCurrency);
 
-    if (this.apiResponse) {
-      this.exchangeRate = this.apiResponse.conversion_rates[this.newCurrency];  //[this.newCurrency];
+    if (response) {
+      this.exchangeRate = response.conversion_rates[this.newCurrency];  //[this.newCurrency];
     } else {
-      this.apiResponse = "error"; // error logic here
+      response = "error"; // error logic here
     }
   }
 
