@@ -13,6 +13,15 @@ function displayCurrencyConversion(currencyExchanger) {
   $('.new-currency-display').text(currencyExchanger.newCurrency);
   $('#exchange-rate').text(currencyExchanger.exchangeRate);
   $('#converted-currency').text(currencyExchanger.exchangeRate * currencyExchanger.baseValue);
+
+  //$('#error').hide();
+  //$('#result').show();
+}
+
+function displayError(currencyExchanger) {
+  $('#error').html(`<h4>Oops Something Went Wrong! Error-type: ${currencyExchanger.error}`);
+  //$('#error').show();
+  //$('#result').hide();
 }
 
 $(document).ready(function () {
@@ -26,8 +35,16 @@ $(document).ready(function () {
 
     currencyExchanger = new CurrencyExchanger(baseCurrency, baseValue, newCurrency);
 
-    await currencyExchanger.getExchangeRate();
-    displayCurrencyConversion(currencyExchanger);
-  });
+    console.log(currencyExchanger);
 
+    //(async () => {
+      await currencyExchanger.getExchangeRate();
+      if (!currencyExchanger.error) {
+        displayCurrencyConversion(currencyExchanger);
+      } else {
+        displayError(currencyExchanger);
+      }
+      console.log(currencyExchanger);
+    //});
+  });
 });

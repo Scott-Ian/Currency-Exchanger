@@ -14,11 +14,12 @@ export class CurrencyExchanger {
   async getExchangeRate() {
     let exchangeRateService = new ExchangeRateService();
     let response = await exchangeRateService.getAllExchangeRates(this.baseCurrency);
+    console.log(`Currency-exchanger.js response var: ${response["error-type"]}`);
 
-    if (response) {
+    if (response.result === "success") {
       this.exchangeRate = response.conversion_rates[this.newCurrency];  //[this.newCurrency];
     } else {
-      response = "error"; // error logic here
+      this.error = response["error-type"]; 
     }
   }
 
